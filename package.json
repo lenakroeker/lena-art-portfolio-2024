@@ -1,5 +1,5 @@
 {
-  "name": "rk-site",
+  "name": "lk-site",
   "version": "1.0.0",
   "description": "Richard Kroeker Architect",
   "main": "Server/index.js",
@@ -16,6 +16,7 @@
     "crypto": "^1.0.1",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
+    "emailjs-com": "^3.2.0",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.7.0",
