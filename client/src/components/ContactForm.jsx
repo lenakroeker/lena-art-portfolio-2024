@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 import styled from "styled-components";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
   const {
