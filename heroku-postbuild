@@ -1,0 +1,6 @@
+// package.json (at the root of your project)
+{
+  "scripts": {
+    "heroku-postbuild": "npm install --prefix client && npm install --prefix server && npm run build --prefix client"
+  }
+}
