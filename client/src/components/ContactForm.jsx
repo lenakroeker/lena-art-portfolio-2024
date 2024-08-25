@@ -12,9 +12,9 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm();
 
-  const APP_SERVICE_ID = import.meta.env.React_APP_SERVICE_ID;
-  const APP_TEMPLATE_ID = import.meta.env.React_APP_TEMPLATE_ID;
-  const APP_USER_ID = import.meta.env.React_APP_USER_ID;
+  const APP_SERVICE_ID = import.meta.env.VITE_APP_SERVICE_ID;
+  const APP_TEMPLATE_ID = import.meta.env.VITE_APP_TEMPLATE_ID;
+  const APP_USER_ID = import.meta.env.VITE_APP_USER_ID;
   console.log(APP_SERVICE_ID, APP_TEMPLATE_ID, APP_USER_ID);
 
   // Function that displays a success toast on bottom right of the page when form submission is successful

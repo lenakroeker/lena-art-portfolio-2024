@@ -23,7 +23,7 @@ export default function Wall({ item }) {
 }
 
 const Wrapper = styled.div`
-  width: 100vw;
+  width: auto;
   height: 100vh;
   flex-shrink: 0; /* Prevents the "Wall" elements from shrinking */
   position: relative;
@@ -51,8 +51,8 @@ const Card = styled.div`
   padding: 20px 10px 10px 10px;
   text-align: center;
   position: absolute;
-  right: 15vw;
-  bottom: 10vw;
+  right: 8vw;
+  bottom: 13vw;
 `;
 
 const Year = styled.div`
