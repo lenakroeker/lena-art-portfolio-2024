@@ -5,6 +5,9 @@ import { NavLink, Link } from "react-router-dom";
 
 export default function EditDeleteProject() {
   const [projects, setProjects] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(""); // State for search input
+  const [categoryFilter, setCategoryFilter] = useState(""); // State for category filter
+
   const logout = () => {
     localStorage.removeItem("accessToken");
     window.location.href = "/admin";
@@ -14,7 +17,6 @@ export default function EditDeleteProject() {
     const getProjects = async () => {
       try {
         const res = await publicRequest.get("projects");
-        console.log("project", res);
         setProjects(res.data.reverse());
       } catch (error) {
         console.error("Error fetching projects:", error);
@@ -41,6 +43,16 @@ export default function EditDeleteProject() {
     }
   };
 
+  // Filter projects based on search term and category filter
+  const filteredProjects = projects.filter((project) => {
+    const matchesSearchTerm = project.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      categoryFilter === "" || project.categories.includes(categoryFilter);
+    return matchesSearchTerm && matchesCategory;
+  });
+
   return (
     <Wrapper>
       <Header>Welcome Admin!</Header>
@@ -49,19 +61,43 @@ export default function EditDeleteProject() {
       </Link>
       <Button onClick={logout}>Logout</Button>
 
-      <ProjectGrid>
-        {projects &&
-          projects.map((item, index) => (
-            <ProjectCard key={index}>
-              <Img src={item.images[0]} alt={item.title} />
+      {/* Search and filter inputs */}
+      <SearchInput
+        type="text"
+        placeholder="Search by project name"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <CategoryFilter
+        value={categoryFilter}
+        onChange={(e) => setCategoryFilter(e.target.value)}
+      >
+        <option value="">All Categories</option>
+        <option value="painting">Painting</option>
+        <option value="textile">Textile</option>
+        <option value="earlyWork">Early Work</option>
+        <option value="garment">Garment</option>
+        <option value="ovenside">Ovenside</option>
+        <option value="vips">VIPs</option>
+        <option value="instances_of_peacefulness">
+          Instances of Peacefulness
+        </option>
+        <option value="deconfinement">Deconfinement</option>
+        <option value="the_quality_screen_time_variety_hour">TQSTVH</option>
+      </CategoryFilter>
 
-              <Name>{item.title}</Name>
-              <Edit end to={`/admin/edit-project/${item._id}`}>
-                Edit
-              </Edit>
-              <Delete onClick={() => deleteProject(item._id)}>Delete</Delete>
-            </ProjectCard>
-          ))}
+      <ProjectGrid>
+        {filteredProjects.map((item, index) => (
+          <ProjectCard key={index}>
+            <Img src={item.images[0]} alt={item.title} />
+
+            <Name>{item.title}</Name>
+            <Edit end to={`/admin/edit-project/${item._id}`}>
+              Edit
+            </Edit>
+            <Delete onClick={() => deleteProject(item._id)}>Delete</Delete>
+          </ProjectCard>
+        ))}
       </ProjectGrid>
     </Wrapper>
   );
@@ -127,4 +163,18 @@ const Button = styled.button`
   &:active {
     background-color: #8efbbf;
   }
+`;
+
+const SearchInput = styled.input`
+  margin: 10px;
+  padding: 8px;
+  font-size: 16px;
+  width: 200px;
+`;
+
+const CategoryFilter = styled.select`
+  margin: 10px;
+  padding: 8px;
+  font-size: 16px;
+  width: 220px;
 `;
