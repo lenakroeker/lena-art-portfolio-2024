@@ -14,4 +14,8 @@ const Img = styled.img`
   width: 100%;
   height: auto;
   animation: none;
+  @media only screen and (max-width: 500px) {
+    height: 100vh;
+    object-fit: cover;
+  }
 `;

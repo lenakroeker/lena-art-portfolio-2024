@@ -85,7 +85,7 @@ const Img = styled.img`
   @media only screen and (max-width: 500px) {
     width: 94vw;
     right: 3vw;
-    top: 50px;
+    top: 60px;
   }
 `;
 const Img2 = styled.img`
@@ -101,7 +101,7 @@ const Img2 = styled.img`
   @media only screen and (max-width: 500px) {
     width: 94vw;
     right: 3vw;
-    top: 50px;
+    top: 60px;
   }
 `;
 
@@ -117,7 +117,7 @@ const Logo = styled.img`
   @media only screen and (max-width: 500px) {
     width: 94vw;
     right: 2.5vw;
-    top: 200px;
+    top: 210px;
   }
 `;
 const Logo2 = styled.img`
@@ -133,7 +133,7 @@ const Logo2 = styled.img`
   @media only screen and (max-width: 500px) {
     width: 94vw;
     right: 2.5vw;
-    top: 200px;
+    top: 210px;
   }
 `;
 
@@ -146,7 +146,7 @@ const Select = styled.div`
   font-size: 25px;
   @media only screen and (max-width: 500px) {
     margin-top: 45vh;
-    margin-left: 3vw;
+    margin-left: 0vw;
   }
 `;
 
@@ -177,7 +177,7 @@ const Links = styled.div`
     flex-direction: column;
     padding: 0;
     width: 60vw;
-    left: 21vw;
+    left: 20vw;
     bottom: 10vh;
   }
 `;

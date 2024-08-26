@@ -27,6 +27,11 @@ const Wrapper = styled.div`
   height: 100vh;
   flex-shrink: 0; /* Prevents the "Wall" elements from shrinking */
   position: relative;
+  @media only screen and (max-width: 500px) {
+    height: 45vh;
+    width: 100vw;
+    margin-top: 20vh;
+  }
 `;
 
 const Title = styled.div``;
@@ -53,6 +58,10 @@ const Card = styled.div`
   position: absolute;
   right: 8vw;
   bottom: 13vw;
+  @media only screen and (max-width: 500px) {
+    bottom: -25vh;
+    right: 12vw;
+  }
 `;
 
 const Year = styled.div`

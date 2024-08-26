@@ -57,7 +57,7 @@ const Wrapper = styled.div`
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
-  background: #000000;
+  background: #ffffff;
   position: absolute;
   scroll-snap-type: x mandatory;
   -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer and Edge */

@@ -15,9 +15,12 @@ const Wrapper = styled.div`
   min-height: 80vh;
   text-align: center;
   padding: 100px 0;
+  position: absolute;
+  bottom: 5vh;
   @media only screen and (min-width: 500px) {
     padding: 100px 0;
     width: 100vw;
+    position: relative;
   }
 `;
 const Title = styled.h2``;

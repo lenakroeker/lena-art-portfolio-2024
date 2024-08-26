@@ -62,4 +62,7 @@ const Sold = styled.div`
   color: white;
   font-size: 10px;
   padding: 5px;
+  @media only screen and (max-width: 500px) {
+    bottom: 5vw;
+  }
 `;
