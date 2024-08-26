@@ -63,6 +63,9 @@ const Sold = styled.div`
   font-size: 10px;
   padding: 5px;
   @media only screen and (max-width: 500px) {
-    bottom: 5vw;
+    bottom: 20px;
+    right: 10px;
+    padding: 5px;
+    font-size: 0px;
   }
 `;

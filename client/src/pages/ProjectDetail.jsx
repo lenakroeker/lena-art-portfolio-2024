@@ -55,6 +55,8 @@ export default function ProjectDetail() {
             {project.media && <Media>{project.media}</Media>}
             {project.media && <Media>{project.dimensions}</Media>}
             {project.forSale && <Price>${project.price}</Price>}
+            {project.sold && <Price>SOLD</Price>}
+
             <Description>{project.description}</Description>
           </Info>
           {project.images && (
